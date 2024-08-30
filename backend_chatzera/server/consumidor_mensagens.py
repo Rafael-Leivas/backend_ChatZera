@@ -21,13 +21,8 @@ class ConsumidorMensagens:
             print(" [*] Aguardando mensagens. Para sair, pressione CTRL+C")
 
             def callback(ch, method, properties, body):
-                print(f" [x] Recebido: {body}")
                 msg = body.decode("UTF-8")
                 print(f" [!] Mensagem recebida: '{msg}'")
-                root = Tk()
-                root.withdraw()  # Oculta a janela principal do Tkinter
-                messagebox.showinfo("Mensagem da fila " + self.QUEUE_NAME, f" [!] Mensagem recebida : '{msg}'")
-                root.destroy()
 
             # Inicia o consumo de mensagens
             channel.basic_consume(queue=self.QUEUE_NAME, on_message_callback=callback, auto_ack=True)
