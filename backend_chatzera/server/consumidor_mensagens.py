@@ -1,5 +1,6 @@
 import pika
 from tkinter import messagebox, Tk
+import json
 
 class ConsumidorMensagens:
     QUEUE_NAME = "cli-1"
@@ -21,8 +22,10 @@ class ConsumidorMensagens:
             print(" [*] Aguardando mensagens. Para sair, pressione CTRL+C")
 
             def callback(ch, method, properties, body):
-                msg = body.decode("UTF-8")
-                print(f" [!] Mensagem recebida: '{msg}'")
+                data = json.loads(body.decode("UTF-8"))
+                msg = data["message"]
+                sender_name = data["sender_name"]
+                print(f" [!] Mensagem recebida de {sender_name}: '{msg}'")
 
             # Inicia o consumo de mensagens
             channel.basic_consume(queue=self.QUEUE_NAME, on_message_callback=callback, auto_ack=True)

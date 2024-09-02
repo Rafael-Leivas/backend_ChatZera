@@ -1,4 +1,5 @@
 import pika
+import json
 
 class ProdutorMensagens:
     QUEUE_NAME = "msg-in"
@@ -19,7 +20,12 @@ class ProdutorMensagens:
 
             property = pika.BasicProperties(headers={'sender_name': sender_name})
 
-            channel.basic_publish(exchange=self.EXCHANGE_GROUP, routing_key='', body=msg.encode())
+            message_body = json.dumps({
+                "message": msg,
+                "sender_name": sender_name
+            })
+
+            channel.basic_publish(exchange=self.EXCHANGE_GROUP, routing_key='', body=message_body.encode())
             print(f" [x] Enviado...: '{msg}' de '{sender_name}'")
 
 
