@@ -41,9 +41,9 @@ python chat_server.py
 
 Inicie a API FastAPI:
 
-Navegue até a pasta api/ e execute o servidor FastAPI usando o Uvicorn:
+No diretório raiz utilize o seguinte comand:
 
-    uvicorn main:app --reload
+    uvicorn backend_chatzera.api.api:app --reload
 
 Interaja com o cliente de chat:
 
