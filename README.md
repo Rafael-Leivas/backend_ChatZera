@@ -43,7 +43,7 @@ Inicie a API FastAPI:
 
 Navegue até a pasta api/ e execute o servidor FastAPI usando o Uvicorn:
 
-    uvicorn main:app --reload
+    uvicorn api:app --reload
 
 Interaja com o cliente de chat:
 
