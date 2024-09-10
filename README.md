@@ -1,7 +1,10 @@
-README - Projeto de Chat com RabbitMQ
+Projeto de Chat com RabbitMQ
 Descrição do Projeto
 
-Este é um projeto de um sistema de chat, desenvolvido em Python, utilizando RabbitMQ como sistema de mensageria. O sistema permite que múltiplos clientes se conectem a um servidor de chat, escolham uma sala de comunicação, e enviem mensagens para todos os usuários da sala ou para um usuário específico. As mensagens são distribuídas pelo servidor para todos os usuários conectados à sala.
+Este é um projeto de um sistema de chat, desenvolvido em Python, utilizando RabbitMQ como sistema de mensageria. O sistema permite que múltiplos clientes se conectem a um servidor de chat, e enviem mensagens para todos os usuários da sala. As mensagens são distribuídas pelo servidor para todos os usuários conectados à sala.
+
+Após rodar o servidor com o uvicorn pode acessar e utilizar usando o chat do front-end
+**link:[ChatZera](https://chatzera.netlify.app/)**
 
 Pré-requisitos
 
@@ -17,31 +20,26 @@ Clone o repositório
 
     git clone https://github.com/seu-usuario/chat_project.git
 
-Crie um ambiente virtual e instale as dependências:
+Crie um ambiente virtual:
 
     python -m venv venv
-    source venv/bin/activate  # No Windows use `venv\Scripts\activate`
+
+Entre no ambiente virtual
+Para Linux  
+
+    source venv/bin/activate 
+Para Windows
+
+    venv\Scripts\activate
+
+Após entrar no ambiente virtual instale as dependencias com o comando
+
     pip install -r requirements.txt
 
-Instale e configure o RabbitMQ:
 
-Baixe e instale o RabbitMQ seguindo as instruções no site oficial.
-Após a instalação, inicie o serviço do RabbitMQ.
+Para rodar o projeto:
 
-    Configuração do RabbitMQ:
-        No arquivo server/message_broker.py, configure as credenciais e o host do RabbitMQ conforme a sua instalação.
-
-Execução
-
-Inicie o servidor de chat:
-
-    Navegue até a pasta server/ e execute o servidor:
-
-python chat_server.py
-
-Inicie a API FastAPI:
-
-No diretório raiz utilize o seguinte comand:
+No diretório raiz utilize o seguinte comando:
 
     uvicorn backend_chatzera.api.api:app --reload
 
