@@ -36,9 +36,9 @@ Após rodar o servidor com o Uvicorn, você pode acessar e utilizar o chat do fr
         venv\Scripts\activate
 
 4. Após entrar no ambiente virtual instale as dependencias com o comando
-
+   ```bash
     pip install -r requirements.txt
-
+   ```
 
 ## Rodando o Projeto:
 
