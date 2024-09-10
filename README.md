@@ -19,7 +19,7 @@ Após rodar o servidor com o Uvicorn, você pode acessar e utilizar o chat do fr
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/chat_project.git
+   https://github.com/Rafael-Leivas/backend_ChatZera.git
    ```
 2. Crie um ambiente virtual:
     ```bash
