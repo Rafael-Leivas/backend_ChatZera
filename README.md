@@ -1,53 +1,57 @@
-Projeto de Chat com RabbitMQ
-Descrição do Projeto
+# Projeto de Chat com RabbitMQ
 
-Este é um projeto de um sistema de chat, desenvolvido em Python, utilizando RabbitMQ como sistema de mensageria. O sistema permite que múltiplos clientes se conectem a um servidor de chat, e enviem mensagens para todos os usuários da sala. As mensagens são distribuídas pelo servidor para todos os usuários conectados à sala.
+## Descrição do Projeto
 
-Após rodar o servidor com o uvicorn pode acessar e utilizar usando o chat do front-end aqui **link: [ChatZera](https://chatzera.netlify.app/)**
+Este é um sistema de chat desenvolvido em Python, utilizando RabbitMQ como sistema de mensageria. O sistema permite que múltiplos clientes se conectem a um servidor de chat e enviem mensagens para todos os usuários da sala. As mensagens são distribuídas pelo servidor para todos os usuários conectados à sala.
 
-Pré-requisitos
+Após rodar o servidor com o Uvicorn, você pode acessar e utilizar o chat do front-end aqui: [ChatZera](https://chatzera.netlify.app/).
 
-    Python 3.8+
-    RabbitMQ
-    FastAPI
-    Uvicorn
-    Pika (biblioteca Python para RabbitMQ)
+## Pré-requisitos
 
-Instalação
+- Python 3.8+
+- RabbitMQ
+- FastAPI
+- Uvicorn
+- Pika (biblioteca Python para RabbitMQ)
 
-Clone o repositório
+## Instalação
 
-    git clone https://github.com/seu-usuario/chat_project.git
+1. Clone o repositório:
 
-Crie um ambiente virtual:
-
+   ```bash
+   git clone https://github.com/seu-usuario/chat_project.git
+   ```
+2. Crie um ambiente virtual:
+    ```bash
     python -m venv venv
+    ```
+3. Entre no ambiente virtual
 
-Entre no ambiente virtual
-Para Linux  
+    Para Linux  
 
-    source venv/bin/activate 
-Para Windows
+        source venv/bin/activate 
 
-    venv\Scripts\activate
+   Para Windows
 
-Após entrar no ambiente virtual instale as dependencias com o comando
+        venv\Scripts\activate
+
+4. Após entrar no ambiente virtual instale as dependencias com o comando
 
     pip install -r requirements.txt
 
 
-Para rodar o projeto:
+## Rodando o Projeto:
 
-No diretório raiz utilize o seguinte comando:
-
+1. No diretório raiz do projeto, utilize o seguinte comando para iniciar o servidor:
+    ```bash
     uvicorn backend_chatzera.api.api:app --reload
-
-Interaja com o cliente de chat:
+    ```
+2. Interaja com o cliente de chat:
 
 Após iniciar a API, você pode interagir com o cliente de chat através das rotas expostas pelo FastAPI. Use uma ferramenta como curl, Postman, ou faça requisições via código para enviar e receber mensagens.
 
-Uso
+## Uso
 
-    Enviando mensagens: Envie uma requisição POST para a rota /send_message/ da API, incluindo o nome do responsável e a mensagem no corpo da requisição.
+- **Enviando mensagens:** Envie uma requisição POST para a rota `/send_message/` da API, incluindo o nome do responsável e a mensagem no corpo da requisição.
 
-    Recebendo mensagens: As mensagens são automaticamente distribuídas e podem ser visualizadas diretamente no console onde o servidor de chat está sendo executado.
+- **Recebendo mensagens:** As mensagens são automaticamente distribuídas e podem ser visualizadas diretamente no console onde o servidor de chat está sendo executado.
