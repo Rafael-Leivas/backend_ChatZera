@@ -43,10 +43,11 @@ Após rodar o servidor com o Uvicorn, você pode acessar e utilizar o chat do fr
 ## Rodando o Projeto:
 
 1. No diretório raiz do projeto, utilize o seguinte comando para iniciar o servidor:
+   
     ```bash
     uvicorn backend_chatzera.api.api:app --reload
     ```
-2. Interaja com o cliente de chat:
+3. Interaja com o cliente de chat:
 
 Após iniciar a API, você pode interagir com o cliente de chat através das rotas expostas pelo FastAPI. Use uma ferramenta como curl, Postman, ou faça requisições via código para enviar e receber mensagens.
 
