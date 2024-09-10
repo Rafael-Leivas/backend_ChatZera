@@ -3,8 +3,7 @@ Descrição do Projeto
 
 Este é um projeto de um sistema de chat, desenvolvido em Python, utilizando RabbitMQ como sistema de mensageria. O sistema permite que múltiplos clientes se conectem a um servidor de chat, e enviem mensagens para todos os usuários da sala. As mensagens são distribuídas pelo servidor para todos os usuários conectados à sala.
 
-Após rodar o servidor com o uvicorn pode acessar e utilizar usando o chat do front-end
-**link:[ChatZera](https://chatzera.netlify.app/)**
+Após rodar o servidor com o uvicorn pode acessar e utilizar usando o chat do front-end aqui **link: [ChatZera](https://chatzera.netlify.app/)**
 
 Pré-requisitos
 
