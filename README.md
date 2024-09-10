@@ -1,56 +1,58 @@
-README - Projeto de Chat com RabbitMQ
-Descrição do Projeto
+# Projeto de Chat com RabbitMQ
 
-Este é um projeto de um sistema de chat, desenvolvido em Python, utilizando RabbitMQ como sistema de mensageria. O sistema permite que múltiplos clientes se conectem a um servidor de chat, escolham uma sala de comunicação, e enviem mensagens para todos os usuários da sala ou para um usuário específico. As mensagens são distribuídas pelo servidor para todos os usuários conectados à sala.
+## Descrição do Projeto
 
-Pré-requisitos
+Este é um sistema de chat desenvolvido em Python, utilizando RabbitMQ como sistema de mensageria. O sistema permite que múltiplos clientes se conectem a um servidor de chat e enviem mensagens para todos os usuários da sala. As mensagens são distribuídas pelo servidor para todos os usuários conectados à sala.
 
-    Python 3.8+
-    RabbitMQ
-    FastAPI
-    Uvicorn
-    Pika (biblioteca Python para RabbitMQ)
+Após rodar o servidor com o Uvicorn, você pode acessar e utilizar o chat do front-end aqui: [ChatZera](https://chatzera.netlify.app/).
 
-Instalação
+## Pré-requisitos
 
-Clone o repositório
+- Python 3.8+
+- RabbitMQ
+- FastAPI
+- Uvicorn
+- Pika (biblioteca Python para RabbitMQ)
 
-    git clone https://github.com/seu-usuario/chat_project.git
+## Instalação
 
-Crie um ambiente virtual e instale as dependências:
+1. Clone o repositório:
 
+   ```bash
+   https://github.com/Rafael-Leivas/backend_ChatZera.git
+   ```
+2. Crie um ambiente virtual:
+    ```bash
     python -m venv venv
-    source venv/bin/activate  # No Windows use `venv\Scripts\activate`
+    ```
+3. Entre no ambiente virtual
+
+    Para Linux  
+
+        source venv/bin/activate 
+
+   Para Windows
+
+        venv\Scripts\activate
+
+4. Após entrar no ambiente virtual instale as dependencias com o comando
+   ```bash
     pip install -r requirements.txt
+   ```
 
-Instale e configure o RabbitMQ:
+## Rodando o Projeto:
 
-Baixe e instale o RabbitMQ seguindo as instruções no site oficial.
-Após a instalação, inicie o serviço do RabbitMQ.
-
-    Configuração do RabbitMQ:
-        No arquivo server/message_broker.py, configure as credenciais e o host do RabbitMQ conforme a sua instalação.
-
-Execução
-
-Inicie o servidor de chat:
-
-    Navegue até a pasta server/ e execute o servidor:
-
-python chat_server.py
-
-Inicie a API FastAPI:
-
-No diretório raiz utilize o seguinte comand:
-
+1. No diretório raiz do projeto, utilize o seguinte comando para iniciar o servidor:
+   
+    ```bash
     uvicorn backend_chatzera.api.api:app --reload
-
-Interaja com o cliente de chat:
+    ```
+3. Interaja com o cliente de chat:
 
 Após iniciar a API, você pode interagir com o cliente de chat através das rotas expostas pelo FastAPI. Use uma ferramenta como curl, Postman, ou faça requisições via código para enviar e receber mensagens.
 
-Uso
+## Uso
 
-    Enviando mensagens: Envie uma requisição POST para a rota /send_message/ da API, incluindo o nome do responsável e a mensagem no corpo da requisição.
+- **Enviando mensagens:** Envie uma requisição POST para a rota `/send_message/` da API, incluindo o nome do responsável e a mensagem no corpo da requisição.
 
-    Recebendo mensagens: As mensagens são automaticamente distribuídas e podem ser visualizadas diretamente no console onde o servidor de chat está sendo executado.
+- **Recebendo mensagens:** As mensagens são automaticamente distribuídas e podem ser visualizadas diretamente no console onde o servidor de chat está sendo executado.
