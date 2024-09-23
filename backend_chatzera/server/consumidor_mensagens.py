@@ -45,6 +45,11 @@ class ConsumidorMensagens:
         self.channel.stop_consuming()
         self.connection.close()
 
+    # Método de atualização para o padrão Observer
+    def update(self, msg, sender_name):
+        print(f"Observer recebeu uma mensagem de {sender_name}: {msg}")
+        self.callback(msg, sender_name)
+
 
 if __name__ == '__main__':
     def print_message(msg, sender):
